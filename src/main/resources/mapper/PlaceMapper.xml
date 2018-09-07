@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.company.project.dao.PlaceMapper">
+  <resultMap id="BaseResultMap" type="com.company.project.model.Place">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="place_id" jdbcType="INTEGER" property="placeId" />
+    <result column="province" jdbcType="VARCHAR" property="province" />
+    <result column="city" jdbcType="VARCHAR" property="city" />
+    <result column="area" jdbcType="VARCHAR" property="area" />
+  </resultMap>
+</mapper>

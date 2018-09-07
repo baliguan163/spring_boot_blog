@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.company.project.dao.LabelMapper">
+  <resultMap id="BaseResultMap" type="com.company.project.model.Label">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="label_id" jdbcType="INTEGER" property="labelId" />
+    <result column="label_title" jdbcType="VARCHAR" property="labelTitle" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+  </resultMap>
+</mapper>

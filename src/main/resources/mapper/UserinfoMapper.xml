@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.company.project.dao.UserinfoMapper">
+  <resultMap id="BaseResultMap" type="com.company.project.model.Userinfo">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="userinfo_id" jdbcType="INTEGER" property="userinfoId" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="user_name" jdbcType="VARCHAR" property="userName" />
+    <result column="user_sex" jdbcType="BIT" property="userSex" />
+    <result column="user_birthday" jdbcType="DATE" property="userBirthday" />
+    <result column="user_job" jdbcType="VARCHAR" property="userJob" />
+    <result column="user_post" jdbcType="VARCHAR" property="userPost" />
+    <result column="user_place" jdbcType="INTEGER" property="userPlace" />
+    <result column="user_image" jdbcType="VARCHAR" property="userImage" />
+    <result column="user_recent_login_time" jdbcType="TIMESTAMP" property="userRecentLoginTime" />
+    <result column="user_PV" jdbcType="INTEGER" property="userPv" />
+    <result column="user_introduction" jdbcType="LONGVARCHAR" property="userIntroduction" />
+  </resultMap>
+</mapper>
