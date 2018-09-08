@@ -48,15 +48,15 @@
 
                         <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false" id="categoryBtn">分类</button>
-                        <ul class="dropdown-menu">
-                            <li th:each="category:${categories}">
-                                <a th:name="${category.name}" th:abbr="${category.displayName}" onclick="selectCategory(this)" th:text="${category.displayName}"></a>
-                            </li>
-                        </ul>
+                        <!--<ul class="dropdown-menu">-->
+                            <!--<li th:each="category:${categories}">-->
+                                <!--<a th:name="${category.name}" th:abbr="${category.displayName}" onclick="selectCategory(this)" th:text="${category.displayName}"></a>-->
+                            <!--</li>-->
+                        <!--</ul>-->
                     </div>
-                    <input name="category" id="cateoryInput" type="hidden" th:field="*{category.name}"/>
-                    <input name="id" type="hidden" th:value="${target.id}"/>
-                    <input th:type="text" class="form-contorl" name="title" th:field="*{title}" th:placeholder="${target.title}"/>
+                    <input name="category" id="cateoryInput" type="hidden" th:field="${target.blogTitle}"/>
+                    <input name="id" type="hidden" th:value="${target.blogId}"/>
+                    <input th:type="text" class="form-contorl" name="title" th:field="*{blogTitle}" th:placeholder="${target.blogTitle}"/>
                 </div>
             </div>
         </div>
@@ -65,14 +65,14 @@
     <!--文本标记区-->
     <div id="layout" style="width: 100%;height: 100%">
         <div id="test-editormd">
-            <textarea style="display:none;" name="content" th:field="*{content}" th:text="${target.content}"></textarea>
+            <textarea style="display:none;" name="content" th:field="*{blogText}" th:text="${target.blogText}"></textarea>
         </div>
     </div>
     <!--提交按钮-->
     <div class="row">
         <div class="col-md-6 col-md-offset-6">
             <p>
-                <input type="submit" class="btn btn-primary btn-lg" role="button" value="发表">
+                <input type="submit" class="btn btn-primary btn-lg" role="button" value="发表" />
             </p>
         </div>
     </div>

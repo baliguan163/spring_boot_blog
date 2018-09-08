@@ -51,13 +51,13 @@
                         <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false" id="categoryBtn">分类</button>
 
-                        <ul class="dropdown-menu">
-                            <li th:each="category:${categories}">
-                                <a th:name="${category.name}" th:abbr="${category.displayName}" onclick="selectCategory(this)" th:text="${category.displayName}"></a>
-                            </li>
-                        </ul>
+                        <!--<ul class="dropdown-menu">-->
+                            <!--<li th:each="category:${categories}">-->
+                                <!--<a th:name="${category.name}" th:abbr="${category.displayName}" onclick="selectCategory(this)" th:text="${category.displayName}"></a>-->
+                            <!--</li>-->
+                        <!--</ul>-->
                     </div>
-                    <input name="category" id="cateoryInput" type="hidden" th:field="*{category.name}"/>
+                    <!--<input name="category" id="cateoryInput" type="hidden" th:field="*{category.name}"/>-->
                     <input type="text" class="form-contorl" palceholder="标题" name="title" th:field="*{title}"/>
                 </div>
             </div>

@@ -31,6 +31,14 @@ CREATE TABLE `blog` (
 INSERT INTO blog(blog_title,blog_text,blog_visit,user_id,blog_date,blog_pv)
 VALUES ('测试','测试内容测试内容测试内容',0,1,'20180905',0);
 
+INSERT INTO blog(blog_title,blog_text,blog_visit,user_id,blog_date,blog_pv)
+VALUES ('浅议李自成败亡的三个致命错误','浅议李自成败亡的三个致命错误浅议李自成败亡的三个致命错误浅议李自成败亡的三个致命错误浅议李自成败亡的三个致命错误',0,1,'20180905',0);
+
+
+
+
+
+
 
 -- ----------------------------
 -- 2 Table structure for `blog_label`
@@ -119,6 +127,11 @@ CREATE TABLE `user` (
   PRIMARY KEY (`user_id`)
 )ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
+
+INSERT INTO user(user_account,user_password) VALUES ('admin','123456');
+INSERT INTO user(user_account,user_password) VALUES ('admin001','123456');
+INSERT INTO user(user_account,user_password) VALUES ('admin002','123456');
+INSERT INTO user(user_account,user_password) VALUES ('admin003','123456');
 
 -- ----------------------------
 -- 8 Table structure for `userinfo`

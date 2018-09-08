@@ -9,6 +9,10 @@
     <link th:href="@{/bootstrap/css/bootstrap.css}" rel="stylesheet"/>
     <link th:href="@{/bootstrap/css/bootstrap-theme.css}" rel="stylesheet"/>
     <link th:href="@{/css/mycss.css}" rel="stylesheet"/>
+    <!--<link href="../../bootstrap/css/bootstrap.css" rel="stylesheet"/>-->
+    <!--<link href="../../css/bootstrap-theme.css" rel="stylesheet"/>-->
+    <!--<link href="../../css/mycss.css" rel="stylesheet"/>-->
+
 </head>
 
 <body>
@@ -29,13 +33,13 @@
                 <td>发表时间</td>
                 <td style="text-align: center" colspan="2">操作</td>
             </tr>
-                <tr th:each="articles:${articles}">
-                    <td th:text="${articles.blogId}"></td>
-                    <td th:text="${articles.blogTitle}"></td>
-                    <td th:text="${articles.blogText}"></td>
-                    <td th:text="${articles.blogDate}"></td>
-                    <td><a th:href="@{'/admin/update/'+${articles.blogId}}">修改</a></td>
-                    <td><a th:href="@{'/admin/delete/'+${articles.blogId}}">删除</a></td>
+                <tr th:each="blogs:${blogs}">
+                    <td th:text="${blogs.blogId}"></td>
+                    <td th:text="${blogs.blogTitle}"></td>
+                    <td th:text="${blogs.blogText}"></td>
+                    <td th:text="${blogs.blogDate}"></td>
+                    <td><a th:href="@{'/admin/update/'+${blogs.blogId}}">修改</a></td>
+                    <td><a th:href="@{'/admin/delete/'+${blogs.blogId}}">删除</a></td>
                 </tr>
         </table>
     </div>
