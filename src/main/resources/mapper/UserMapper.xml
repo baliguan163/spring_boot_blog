@@ -5,8 +5,13 @@
     <!--
       WARNING - @mbg.generated
     -->
-    <id column="user_id" jdbcType="INTEGER" property="userId" />
-    <result column="user_account" jdbcType="VARCHAR" property="userAccount" />
-    <result column="user_password" jdbcType="CHAR" property="userPassword" />
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="nickname" jdbcType="VARCHAR" property="nickname" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="enabled" jdbcType="BIT" property="enabled" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="userface" jdbcType="VARCHAR" property="userface" />
+    <result column="regTime" jdbcType="TIMESTAMP" property="regtime" />
   </resultMap>
 </mapper>

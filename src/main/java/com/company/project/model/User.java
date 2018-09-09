@@ -1,57 +1,137 @@
 package com.company.project.model;
 
+import java.util.Date;
 import javax.persistence.*;
 
 public class User {
     @Id
-    @Column(name = "user_id")
-    private Integer userId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
 
-    @Column(name = "user_account")
-    private String userAccount;
+    private String username;
 
-    @Column(name = "user_password")
-    private String userPassword;
+    private String nickname;
+
+    private String password;
+
+    private Boolean enabled;
+
+    private String email;
+
+    private String userface;
+
+    @Column(name = "regTime")
+    private Date regtime;
 
     /**
-     * @return user_id
+     * @return id
      */
-    public Integer getUserId() {
-        return userId;
+    public Integer getId() {
+        return id;
     }
 
     /**
-     * @param userId
+     * @param id
      */
-    public void setUserId(Integer userId) {
-        this.userId = userId;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     /**
-     * @return user_account
+     * @return username
      */
-    public String getUserAccount() {
-        return userAccount;
+    public String getUsername() {
+        return username;
     }
 
     /**
-     * @param userAccount
+     * @param username
      */
-    public void setUserAccount(String userAccount) {
-        this.userAccount = userAccount;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     /**
-     * @return user_password
+     * @return nickname
      */
-    public String getUserPassword() {
-        return userPassword;
+    public String getNickname() {
+        return nickname;
     }
 
     /**
-     * @param userPassword
+     * @param nickname
      */
-    public void setUserPassword(String userPassword) {
-        this.userPassword = userPassword;
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
+    }
+
+    /**
+     * @return password
+     */
+    public String getPassword() {
+        return password;
+    }
+
+    /**
+     * @param password
+     */
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    /**
+     * @return enabled
+     */
+    public Boolean getEnabled() {
+        return enabled;
+    }
+
+    /**
+     * @param enabled
+     */
+    public void setEnabled(Boolean enabled) {
+        this.enabled = enabled;
+    }
+
+    /**
+     * @return email
+     */
+    public String getEmail() {
+        return email;
+    }
+
+    /**
+     * @param email
+     */
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    /**
+     * @return userface
+     */
+    public String getUserface() {
+        return userface;
+    }
+
+    /**
+     * @param userface
+     */
+    public void setUserface(String userface) {
+        this.userface = userface;
+    }
+
+    /**
+     * @return regTime
+     */
+    public Date getRegtime() {
+        return regtime;
+    }
+
+    /**
+     * @param regtime
+     */
+    public void setRegtime(Date regtime) {
+        this.regtime = regtime;
     }
 }
