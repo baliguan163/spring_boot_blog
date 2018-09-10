@@ -13,15 +13,14 @@
 <body>
 <!--引入导航栏-->
 <div th:include="/common/top :: top"></div>
-
-<div th:if="${not #lists.isEmpty(blogs)}">
-    <div th:each="blogs:${blogs}">
+<div th:if="${not #lists.isEmpty(articles)}">
+    <div th:each="article:${articles}">
         <div class="row">
             <div class="container">
                 <div class="jumbotron">
-                <h3 th:text="${blogs.blogTitle}"></h3>
-                <span class="summary" th:text="${blogs.blogText}"></span><br/><br/>
-                <p><a class="btn btn-primary btn-lg" th:href="@{'/article/detail/'+${blogs.blogId}}" role="button">阅读全文</a> </p>
+                <h3 th:text="${article.title}"></h3>
+                <span class="summary" th:text="${article.title}"></span><br/><br/>
+                <p><a class="btn btn-primary btn-lg" th:href="@{'/article/detail/'+${article.id}}" role="button">阅读全文</a> </p>
                 </div>
             </div>
     </div>

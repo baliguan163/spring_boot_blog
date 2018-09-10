@@ -7,12 +7,9 @@ public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-
     @Column(name = "cateName")
     private String catename;
-
     private Date date;
-
     /**
      * @return id
      */

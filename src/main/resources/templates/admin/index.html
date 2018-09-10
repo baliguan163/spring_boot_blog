@@ -33,13 +33,13 @@
                 <td>发表时间</td>
                 <td style="text-align: center" colspan="2">操作</td>
             </tr>
-                <tr th:each="blogs:${blogs}">
-                    <td th:text="${blogs.blogId}"></td>
-                    <td th:text="${blogs.blogTitle}"></td>
-                    <td th:text="${blogs.blogText}"></td>
-                    <td th:text="${blogs.blogDate}"></td>
-                    <td><a th:href="@{'/admin/update/'+${blogs.blogId}}">修改</a></td>
-                    <td><a th:href="@{'/admin/delete/'+${blogs.blogId}}">删除</a></td>
+                <tr th:each="article:${articles}">
+                    <td th:text="${article.id}"></td>
+                    <td th:text="${article.getTitle()}"></td>
+                    <td th:text="${article.getSummary()}"></td>
+                    <td th:text="${article.getPublishdate()}"></td>
+                    <td><a th:href="@{'/admin/update/'+${article.id}}">修改</a></td>
+                    <td><a th:href="@{'/admin/delete/'+${article.id}}">删除</a></td>
                 </tr>
         </table>
     </div>

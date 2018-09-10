@@ -19,7 +19,7 @@
             <h3 class="panel-title" th:utext="${article.title}"></h3>
         </div>
         <div class="panel-body">
-            <div th:utext="${article.content}"></div>
+            <div th:utext="${article.getHtmlcontent()}"></div>
         </div>
     </div>
 </div>

@@ -1,18 +1,20 @@
 package com.company.project.web;
-
 import com.company.project.core.Result;
 import com.company.project.core.ResultGenerator;
 import com.company.project.model.User;
 import com.company.project.service.UserService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 import java.util.List;
 
 /**
-* Created by ado on 2018-09-09.
+* Created by ado on 2018-09-10.
 */
 @RestController
 @RequestMapping("/user")
@@ -20,35 +22,58 @@ public class UserController {
     @Resource
     private UserService userService;
 
-    @PostMapping
-    public Result add(@RequestBody User user) {
+    @PostMapping("/add")
+    public Result add(User user) {
         userService.save(user);
         return ResultGenerator.genSuccessResult();
     }
 
-    @DeleteMapping("/{id}")
-    public Result delete(@PathVariable Integer id) {
-        userService.deleteById(id);
-        return ResultGenerator.genSuccessResult();
+    @PostMapping("/delete")
+    public Result delete(@RequestParam(value = "id", required = true) Integer id) {
+        User user = userService.findById(id);
+        if(user != null)
+        {
+            userService.deleteById(id);
+            return ResultGenerator.genSuccessResult();
+        }
+        else
+        {
+             return ResultGenerator.genFailResult("数据不存在，删除数据失败");
+        }
     }
 
-    @PutMapping
-    public Result update(@RequestBody User user) {
+    @PostMapping("/update")
+    public Result update(User user) {
         userService.update(user);
         return ResultGenerator.genSuccessResult();
     }
 
-    @GetMapping("/{id}")
-    public Result detail(@PathVariable Integer id) {
+    @PostMapping("/detail")
+    public Result detail(@RequestParam(value = "id", required = true) Integer id) {
         User user = userService.findById(id);
-        return ResultGenerator.genSuccessResult(user);
+        if(user != null)
+        {
+            return ResultGenerator.genSuccessResult(user);
+        }
+        else
+        {
+            return ResultGenerator.genFailResult("数据不存在，获取详情失败");
+        }
     }
 
-    @GetMapping
+
+
+    @PostMapping("/list")
     public Result list(@RequestParam(defaultValue = "0") Integer page, @RequestParam(defaultValue = "0") Integer size) {
         PageHelper.startPage(page, size);
         List<User> list = userService.findAll();
         PageInfo pageInfo = new PageInfo(list);
         return ResultGenerator.genSuccessResult(pageInfo);
     }
+
+
+
+
+
+
 }
